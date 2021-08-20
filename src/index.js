@@ -1,4 +1,5 @@
 /* global GM_addStyle */
+import style from './style.css'
 
 function expandRichContent (node) {
   node.classList.remove('is-collapsed')
@@ -12,28 +13,7 @@ function expandRichContentRecursive (node) {
 
 console.log('知乎移动端修复正在运行')
 
-GM_addStyle(`
-.DownloadGuide {
-  display: none;
-}
-.OpenInAppButton {
-  display: none;
-}
-.MobileAppHeader-downloadLink {
-  display: none;
-}
-.ModalWrap {
-  display: none;
-}
-body.ModalWrap-body {
-  overflow: auto !important;
-}
-.ContentItem-expandButton {
-  display: none;
-}
-.RichContent-inner {
-  max-height: fit-content !important;
-}`)
+GM_addStyle(style)
 
 const observer = new MutationObserver((mutations) => {
   for (const m of mutations) {
@@ -63,3 +43,9 @@ window.addEventListener('load', function (event) {
     subtree: true
   })
 })
+
+document.addEventListener('click', event => {
+  if (event.target.tagName !== 'BUTTON') {
+    event.stopImmediatePropagation()
+  }
+}, false)

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         知乎移动端修复
-// @version      1.0.0
+// @version      1.0.1
 // @description  知乎移动端修复：阻止跳转，自动展开
 // @author       Allan Chain
 // @homepage     https://github.com/AllanChain/zhihu-mobile
@@ -11,8 +11,7 @@
 // @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
-function t(e){e.classList.remove("is-collapsed")}function i(e){e.querySelectorAll(".RichContent.is-collapsed").forEach(t)}console.log("\u77E5\u4E4E\u79FB\u52A8\u7AEF\u4FEE\u590D\u6B63\u5728\u8FD0\u884C");GM_addStyle(`
-.DownloadGuide {
+var a=`.DownloadGuide {
   display: none;
 }
 .OpenInAppButton {
@@ -24,7 +23,7 @@ function t(e){e.classList.remove("is-collapsed")}function i(e){e.querySelectorAl
 .ModalWrap {
   display: none;
 }
-body.ModalWrap-body {
+html, body.ModalWrap-body {
   overflow: auto !important;
 }
 .ContentItem-expandButton {
@@ -32,4 +31,5 @@ body.ModalWrap-body {
 }
 .RichContent-inner {
   max-height: fit-content !important;
-}`);var a=new MutationObserver(e=>{for(let n of e)if(n.target.classList.contains("RichContent")&&n.target.classList.contains("is-collapsed"))t(n.target);else for(let o in n.addedNodes)o.nodeType===Node.ELEMENT_NODE&&o.classList.contains("RichContent")&&t(o)});window.addEventListener("load",function(e){e.stopImmediatePropagation(),i(document),a.observe(document.documentElement,{childList:!0,subtree:!0})});
+}
+`;function o(e){e.classList.remove("is-collapsed")}function s(e){e.querySelectorAll(".RichContent.is-collapsed").forEach(o)}console.log("\u77E5\u4E4E\u79FB\u52A8\u7AEF\u4FEE\u590D\u6B63\u5728\u8FD0\u884C");GM_addStyle(a);var d=new MutationObserver(e=>{for(let t of e)if(t.target.classList.contains("RichContent")&&t.target.classList.contains("is-collapsed"))o(t.target);else for(let n in t.addedNodes)n.nodeType===Node.ELEMENT_NODE&&n.classList.contains("RichContent")&&o(n)});window.addEventListener("load",function(e){e.stopImmediatePropagation(),s(document),d.observe(document.documentElement,{childList:!0,subtree:!0})});document.addEventListener("click",e=>{e.target.tagName!=="BUTTON"&&e.stopImmediatePropagation()},!1);

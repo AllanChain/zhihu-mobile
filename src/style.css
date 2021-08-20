@@ -1,0 +1,21 @@
+.DownloadGuide {
+  display: none;
+}
+.OpenInAppButton {
+  display: none;
+}
+.MobileAppHeader-downloadLink {
+  display: none;
+}
+.ModalWrap {
+  display: none;
+}
+html, body.ModalWrap-body {
+  overflow: auto !important;
+}
+.ContentItem-expandButton {
+  display: none;
+}
+.RichContent-inner {
+  max-height: fit-content !important;
+}

@@ -1,5 +1,4 @@
 const pkg = require('../package.json')
-const path = require('path')
 
 const banner = `// ==UserScript==
 // @name         ${pkg.displayName}
@@ -15,8 +14,7 @@ const banner = `// ==UserScript==
 // @run-at       document-start
 // ==/UserScript==`
 
-module.exports = function (env) {
-  if (env === 'prod') return banner
-  const devFileLocation = path.resolve('index.js')
+module.exports = function (devFileLocation) {
+  if (!devFileLocation) return banner
   return banner.replace('// ==/', `// @require      file://${devFileLocation}\n// ==/`)
 }
