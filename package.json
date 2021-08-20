@@ -1,0 +1,23 @@
+{
+  "name": "zhihu-mobile",
+  "version": "1.0.0",
+  "displayName": "知乎移动端修复",
+  "description": "知乎移动端修复：阻止跳转，自动展开",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "lint": "eslint src --ext js",
+    "lint:fix": "eslint src --ext js --fix"
+  },
+  "author": "Allan Chain",
+  "license": "MIT",
+  "homepage": "https://github.com/AllanChain/zhihu-mobile",
+  "devDependencies": {
+    "esbuild": "^0.12.21",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.0.0"
+  }
+}
