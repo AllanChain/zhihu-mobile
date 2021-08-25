@@ -17,5 +17,5 @@ html, body.ModalWrap-body {
   display: none;
 }
 .RichContent-inner {
-  max-height: fit-content !important;
+  max-height: unset !important;
 }

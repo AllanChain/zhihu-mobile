@@ -1,6 +1,6 @@
 {
   "name": "zhihu-mobile",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "知乎移动端修复",
   "description": "知乎移动端修复：阻止跳转，自动展开",
   "scripts": {
